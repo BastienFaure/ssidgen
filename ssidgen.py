@@ -20,3 +20,6 @@ output  = args.output
 
 if fai and company:
     sys.exit("You cannot specifiy both -c and -f parameters")
+
+def bruteforcize(string):
+    return [string, string.upper(), string[0].upper()+string[1:]]
