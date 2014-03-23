@@ -26,5 +26,11 @@ def bruteforcize(string):
 
 dictionnary = open(output + '.txt' if output else 'ssid.txt', "w")
 
+
+if fai:
+    for i in range(65535):
+        dictionnary.write(fai + '_%04x\n' % i)
+        dictionnary.write(fai + '_%04X\n' % i)
+
 dictionnary.close
 print 'An SSID list for '+ (company if company else fai) + ' was generated in ' + (output if output else 'ssid.txt')
