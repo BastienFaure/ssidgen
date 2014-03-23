@@ -23,3 +23,8 @@ if fai and company:
 
 def bruteforcize(string):
     return [string, string.upper(), string[0].upper()+string[1:]]
+
+dictionnary = open(output + '.txt' if output else 'ssid.txt', "w")
+
+dictionnary.close
+print 'An SSID list for '+ (company if company else fai) + ' was generated in ' + (output if output else 'ssid.txt')
