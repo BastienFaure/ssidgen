@@ -32,5 +32,10 @@ if fai:
         dictionnary.write(fai + '_%04x\n' % i)
         dictionnary.write(fai + '_%04X\n' % i)
 
+if company:
+    prefix = 'wifi'
+    map(lambda x: dictionnary.write(x+"\n"),[ "%s%s%s" % (x,y,z) for x in bruteforcize(prefix) for y in ["-","_"] for z in bruteforcize(company)])
+    map(lambda x: dictionnary.write(x+"\n"),[ "%s%s%s" % (z,y,x) for x in bruteforcize(prefix) for y in ["-","_"] for z in bruteforcize(company)])
+
 dictionnary.close
 print 'An SSID list for '+ (company if company else fai) + ' was generated in ' + (output if output else 'ssid.txt')
