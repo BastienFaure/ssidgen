@@ -17,3 +17,6 @@ args = parser.parse_args()
 company = args.company
 fai     = args.fai
 output  = args.output
+
+if fai and company:
+    sys.exit("You cannot specifiy both -c and -f parameters")
